@@ -32,7 +32,8 @@ def get_match_data(match_id):
 
     player_data = [
         {
-            "summonerName": participant['summonerName'],
+            "Name": participant['riotIdGameName'],
+            "Tag": participant['riotIdTagline'],
             "championName": participant['championName'],
             "win": participant['win']
         }
@@ -50,6 +51,7 @@ def get_summoner_history_data(summoner_name="MidOrFeed/Zoe"):
         match_ids = get_match_list(puuid)
 
         for match_id in match_ids:
+            print(match_id)
             match_data = get_match_data(match_id)
             for item in match_data:
                 print(item)
